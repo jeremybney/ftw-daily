@@ -1,17 +1,3 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Modal no extra classes when window is missing 1`] = `
-<div
-  className="test-class-from-props"
->
-  <div>
-    <div>
-      <div
-        className=""
-      >
-        Content
-      </div>
-    </div>
-  </div>
-</div>
-`;
+exports[`Modal no extra classes when window is missing 1`] = `""`;
