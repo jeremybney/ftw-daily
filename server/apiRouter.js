@@ -82,11 +82,15 @@ code_challenge_method=S256`;
 // an authorization code and uses that to log in and redirect to the landing
 // page.
 router.get('/login-as', (req, res) => {
-  const { code, state } = req.query;
+  const { code, state, error } = req.query;
   const storedState = req.cookies[stateKey];
 
   if (state !== storedState) {
     return res.status(403).send('Invalid state parameter.');
+  }
+
+  if (error) {
+    return res.status(400).send(`Failed to log in as user, error: ${error}.`);
   }
 
   const codeVerifier = req.cookies[codeVerifierKey];
