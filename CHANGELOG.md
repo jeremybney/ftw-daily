@@ -14,6 +14,9 @@ way to update this template, but currently, we follow a pattern:
 
 ## Upcoming version 2020-XX-XX
 
+## [v4.2.0] 2020-02-12
+
+- [add] Support for logging in as a user from Console. [#1254](https://github.com/sharetribe/ftw-daily/pull/1254)
 - [change] Add `handlebars` 4.5.3 and `serialize-javascript` 2.1.1 to resolutions in `package.json`.
   [#1251](https://github.com/sharetribe/ftw-daily/pull/1251)
 
