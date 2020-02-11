@@ -83,13 +83,16 @@ class ModalInMobileComponent extends Component {
     const isOpen = isOpenInMobile && isMobileLayout;
 
     // We have 3 view states:
-    // - default desktop layout (just an extra wrapper)
+    // - default desktop layout: render just the children without Modal
     // - mobile layout: content visible inside modal popup
     // - mobile layout: content hidden
+
     const closedClassName = isClosedInMobile ? css.modalHidden : null;
     const classes = classNames({ [css.modalInMobile]: isOpenInMobile }, css.root, className);
 
-    return (
+    return !isMobileLayout ? (
+      <div>{children}</div>
+    ) : (
       <Modal
         className={classes}
         containerClassName={containerClassName || css.modalContainer}
