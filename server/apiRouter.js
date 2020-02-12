@@ -1,3 +1,11 @@
+/**
+ * This file contains server side endpoints that can be used to perform backend
+ * tasks that can not be handled in the browser.
+ *
+ * The endpoints should not clash with the application routes. Therefore, the
+ * enpoints are prefixed in the main server where this file is used.
+ */
+
 const http = require('http');
 const https = require('https');
 const express = require('express');
