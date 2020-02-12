@@ -4,10 +4,7 @@ const express = require('express');
 const crypto = require('crypto');
 const sharetribeSdk = require('sharetribe-flex-sdk');
 const Decimal = require('decimal.js');
-const fs = require('fs');
-const path = require('path');
 
-const buildPath = path.resolve(__dirname, '..', 'build');
 const CLIENT_ID = process.env.REACT_APP_SHARETRIBE_SDK_CLIENT_ID;
 const ROOT_URL = process.env.REACT_APP_CANONICAL_ROOT_URL;
 const CONSOLE_URL =
@@ -15,8 +12,6 @@ const CONSOLE_URL =
 const BASE_URL = process.env.REACT_APP_SHARETRIBE_SDK_BASE_URL;
 const TRANSIT_VERBOSE = process.env.REACT_APP_SHARETRIBE_SDK_TRANSIT_VERBOSE === 'true';
 const USING_SSL = process.env.REACT_APP_SHARETRIBE_USING_SSL === 'true';
-
-const internalErrorPage = fs.readFileSync(path.join(buildPath, '500.html'), 'utf-8');
 
 const router = express.Router();
 const stateKey = `st-${CLIENT_ID}-oauth2State`;
@@ -86,11 +81,11 @@ router.get('/login-as', (req, res) => {
   const storedState = req.cookies[stateKey];
 
   if (state !== storedState) {
-    return res.status(403).send('Invalid state parameter.');
+    return res.status(401).send('Invalid state parameter.');
   }
 
   if (error) {
-    return res.status(400).send(`Failed to log in as user, error: ${error}.`);
+    return res.status(401).send(`Failed to authorize as a user, error: ${error}.`);
   }
 
   const codeVerifier = req.cookies[codeVerifierKey];
@@ -126,7 +121,7 @@ router.get('/login-as', (req, res) => {
       code_verifier: codeVerifier,
     })
     .then(() => res.redirect('/'))
-    .catch(() => res.status(500).send(internalErrorPage));
+    .catch(() => res.status(401).send('Unable to authenticate as a user'));
 });
 
 module.exports = router;
