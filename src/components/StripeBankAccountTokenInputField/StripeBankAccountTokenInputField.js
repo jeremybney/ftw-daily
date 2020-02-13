@@ -1,4 +1,7 @@
 /* eslint-disable no-underscore-dangle */
+
+//comment out the /* below to reengage this program
+
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { intlShape, injectIntl, FormattedMessage } from '../../util/reactIntl';
@@ -95,6 +98,13 @@ class TokenInputFieldComponent extends Component {
     window.clearTimeout(this.blurTimeoutId);
   }
 
+
+
+
+
+
+
+
   /**
    * Request a token from the Stripe API with the given bank account data
    *
@@ -104,6 +114,19 @@ class TokenInputFieldComponent extends Component {
    *
    * @param {Object} values - values from different input types
    */
+
+
+
+//Also comment on the part below to reengage this part
+
+
+
+
+
+
+
+
+
   requestToken(values) {
     const {
       country,
@@ -329,3 +352,4 @@ const StripeBankAccountTokenInputField = props => {
 };
 
 export default StripeBankAccountTokenInputField;
+

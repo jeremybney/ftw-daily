@@ -4,44 +4,44 @@
 
 export const amenities = [
   {
-    key: 'towels',
-    label: 'Towels',
+    key: 'virtual VITA',
+    label: 'virtual VITA',
   },
   {
     key: 'bathroom',
     label: 'Bathroom',
   },
   {
-    key: 'swimming_pool',
-    label: 'Swimming pool',
+    key: 'space for children',
+    label: 'Space for Children',
   },
-  {
-    key: 'own_drinks',
-    label: 'Own drinks allowed',
-  },
-  {
-    key: 'jacuzzi',
-    label: 'Jacuzzi',
-  },
-  {
-    key: 'audiovisual_entertainment',
-    label: 'Audiovisual entertainment',
-  },
-  {
-    key: 'barbeque',
-    label: 'Barbeque',
-  },
-  {
-    key: 'own_food_allowed',
-    label: 'Own food allowed',
-  },
+ // {
+ //   key: 'own_drinks',
+ //   label: 'Own drinks allowed',
+//  },
+//  {
+//    key: 'jacuzzi',
+//    label: 'Jacuzzi',
+//  },
+//  {
+//    key: 'audiovisual_entertainment',
+//    label: 'Audiovisual entertainment',
+//  },
+//  {
+//    key: 'barbeque',
+//    label: 'Barbeque',
+//  },
+//  {
+//    key: 'own_food_allowed',
+//    label: 'Own food allowed',
+//  },
 ];
 
 export const categories = [
-  { key: 'smoke', label: 'Smoke' },
-  { key: 'electric', label: 'Electric' },
-  { key: 'wood', label: 'Wood' },
-  { key: 'other', label: 'Other' },
+  { key: 'spanish', label: 'Spanish' },
+  { key: 'english', label: 'English' },
+  { key: 'chinese', label: 'Chinese' },
+  { key: 'french', label: 'French' },
 ];
 
 // Price filter configuration
