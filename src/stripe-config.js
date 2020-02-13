@@ -292,8 +292,8 @@ Remember to change the import from config.js if you want to use this config!
 This setup is for API version '2019-02-19' and later.
 If you have an older API version in use, you need to update your Stripe API.
 You can check your Stripe API version from Stripe Dashboard -> Developers.
-Stripe only supports payments in certain countries, see full list
 at https://stripe.com/global
+Stripe only supports payments in certain countries, see full list
 */
 
 // export const stripeSupportedCountries = [
